@@ -43,7 +43,10 @@ jobs:
 
       - name: Deploy App
         uses: JamesIves/github-pages-deploy-action@v4
+
         with:
+            #GITHUB_TOKEN : Referencia a Actions permissions
+            token: ${{ secrets.GITHUB_TOKEN }}
             branch: gh-pages
             folder: dist
 
