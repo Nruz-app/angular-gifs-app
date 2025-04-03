@@ -1,4 +1,4 @@
-name: Angular Gifps App
+name: Angular Gifs App
 
 on:
   push:
@@ -46,12 +46,12 @@ jobs:
         env:
           NEW_VERSION: ${{ steps.version.outputs.version }}
         run: |
-          docker build -t push nruz176/angular-gifs-app:$NEW_VERSION .
-          docker build -t push nruz176/angular-gifs-app:latest .
+          docker build -t nruz176/angular-gifs-app:$NEW_VERSION .
+          docker build -t nruz176/angular-gifs-app:latest .
 
       - name: Push Docker Image
         env:
           NEW_VERSION: ${{ steps.version.outputs.version }}
         run: |
-          docker push push nruz176/angular-gifs-app:$NEW_VERSION
-          docker push push nruz176/angular-gifs-app:latest
+          docker push nruz176/angular-gifs-app:$NEW_VERSION
+          docker push nruz176/angular-gifs-app:latest
