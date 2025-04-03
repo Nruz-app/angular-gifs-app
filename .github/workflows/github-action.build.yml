@@ -38,14 +38,15 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      - name: Install Budle
-        uses: npm run build
+      - name: Build Project
+        run: npm run build
 
       - name: Deploy App
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
-          folder: dist
+            branch: gh-pages
+            folder: dist
+
 
       - name: Docker Login
         env:
