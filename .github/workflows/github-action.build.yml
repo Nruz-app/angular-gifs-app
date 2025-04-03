@@ -62,13 +62,13 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
             token: ${{ secrets.GH_TOKEN }}
-            branch: gh-pages-V3
+            branch: gh-pages
             folder: dist/gifs-app/browser
 
 
 #      - name: deploy to Github Pages
 #        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 #        run:
 #          npm run ng --deploy --repo=https://github.com/Nruz-app/angular-gifs-app.git --name="Nruz-app" --email="ruznicolas176@gmail.com" --base-href=/angular-gifs-app/
 
