@@ -48,7 +48,7 @@ jobs:
             #GITHUB_TOKEN : Referencia a Actions permissions
             token: ${{ secrets.GH_TOKEN }}
             branch: gh-pages
-            folder: dist/gifs-app/browser
+            folder: dist/gifs-app
 
 
 
