@@ -55,8 +55,8 @@ jobs:
       - name: Instalar angular-cli-ghpages
         run: npm install -g angular-cli-ghpages
 
-      - name: Deploy a GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/gifs-app/browser
+#      - name: Deploy a GitHub Pages
+#        run: npx angular-cli-ghpages --dir=dist/gifs-app/browser
 
       - name: Deploy App
         uses: JamesIves/github-pages-deploy-action@releases/v2
