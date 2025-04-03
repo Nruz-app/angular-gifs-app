@@ -61,7 +61,7 @@ jobs:
       - name: Deploy App
         uses: JamesIves/github-pages-deploy-action@releases/v2
         with:
-            token: ${{ secrets.GH_TOKEN }}
+            token: ${{ secrets.GITHUB_TOKEN }}
             branch: gh-pages-V3
             folder: dist/gifs-app/browser
 
