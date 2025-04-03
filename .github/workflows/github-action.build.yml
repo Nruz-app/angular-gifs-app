@@ -60,10 +60,9 @@ jobs:
 
       - name: deploy to Github Pages
         env:
-            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run:
-            npm run ng --deploy --repo=https://github.com/Nruz-app/angular-gifs-app.git --name="Nruz-app" --email="ruznicolas176@gmail.com" --base-href=/angular-gifs-app
-
+          npm run ng --deploy --repo=https://github.com/Nruz-app/angular-gifs-app.git --name="Nruz-app" --email="ruznicolas176@gmail.com" --base-href=/angular-gifs-app/
 
       - name: Docker Login
         env:
