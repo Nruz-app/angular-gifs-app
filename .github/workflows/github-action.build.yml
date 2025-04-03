@@ -50,17 +50,16 @@ jobs:
         run: npm ci
 
       - name: Instalall Depencias
-        run: npm run build
+        run: npx ng build --base-href=/angular-gifs-app/
 
       - name: Instalar angular-cli-ghpages
         run: npm install -g angular-cli-ghpages
 
       - name: Deploy App
-        uses: JamesIves/github-pages-deploy-action@releases/v4
+        uses: JamesIves/github-pages-deploy-action@releases/v2
         with:
-            GITHUB_TOKEN : Referencia a Actions permissions
             token: ${{ secrets.GH_TOKEN }}
-            branch: gh-pages-V2
+            branch: gh-pages-V3
             folder: dist/gifs-app/browser
 
 
