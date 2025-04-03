@@ -48,7 +48,7 @@ jobs:
             #GITHUB_TOKEN : Referencia a Actions permissions
             token: ${{ secrets.GITHUB_TOKEN }}
             branch: gh-pages
-            folder: dist
+            folder: dist/gifs-app/browser
 
 
       - name: Docker Login
