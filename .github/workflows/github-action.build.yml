@@ -50,10 +50,13 @@ jobs:
         run: npm ci
 
       - name: Instalall Depencias
-        run: npx ng build --base-href=/angular-gifs-app/
+        run: npx ng build --configuration=production --base-href=/angular-gifs-app/
 
       - name: Instalar angular-cli-ghpages
         run: npm install -g angular-cli-ghpages
+
+      - name: Deploy a GitHub Pages
+        run: npx angular-cli-ghpages --dir=dist/gifs-app/browser
 
       - name: Deploy App
         uses: JamesIves/github-pages-deploy-action@releases/v2
