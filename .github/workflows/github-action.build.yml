@@ -41,15 +41,6 @@ jobs:
       - name: Build Project
         run: npm run build
 
-    #  - name: Deploy App
-    #    uses: JamesIves/github-pages-deploy-action@v4
-    #
-    #    with:
-    #        #GITHUB_TOKEN : Referencia a Actions permissions
-    #        token: ${{ secrets.GITHUB_TOKEN }}
-    #        branch: gh-pages
-    #        folder: dist/gifs-app/browser
-
       - name: Setup Nodejs
         uses: actions/setup-node@v4
         with:
@@ -64,11 +55,20 @@ jobs:
       - name: Instalar angular-cli-ghpages
         run: npm install -g angular-cli-ghpages
 
-      - name: deploy to Github Pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run:
-          npm run ng --deploy --repo=https://nruz-app.github.io/angular-gifs-app/ --name="Nruz-app" --email="ruznicolas176@gmail.com" --base-href=/angular-gifs-app/
+      - name: Deploy App
+        uses: JamesIves/github-pages-deploy-action@releases/v2
+        with:
+            GITHUB_TOKEN : Referencia a Actions permissions
+            token: ${{ secrets.GH_TOKEN }}
+            branch: gh-pages-V2
+            folder: dist/gifs-app/browser
+
+
+#      - name: deploy to Github Pages
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        run:
+#          npm run ng --deploy --repo=https://github.com/Nruz-app/angular-gifs-app.git --name="Nruz-app" --email="ruznicolas176@gmail.com" --base-href=/angular-gifs-app/
 
       - name: Docker Login
         env:
