@@ -35,6 +35,18 @@ jobs:
           format: "${major}.${minor}.${patch}-prerelease${increment}"
 
 
+      - name: Install packages
+        run: npm ci
+
+      - name: Install Budle
+        uses: npm run build
+
+      - name: Deploy App
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist
+
       - name: Docker Login
         env:
             DOCKER_USER: ${{ secrets.DOCKER_USER }}
