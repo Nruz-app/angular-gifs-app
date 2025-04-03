@@ -56,7 +56,7 @@ jobs:
         run: npm install -g angular-cli-ghpages
 
       - name: Deploy App
-        uses: JamesIves/github-pages-deploy-action@releases/v2
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
             GITHUB_TOKEN : Referencia a Actions permissions
             token: ${{ secrets.GH_TOKEN }}
